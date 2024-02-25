@@ -5,7 +5,7 @@
   }
 
   .car-content  {
-    grid-column: span 3;
+    grid-column: span 4;
     position: relative;
   }
 
