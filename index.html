@@ -872,21 +872,22 @@
             <div class="alert alert-danger d-none" role="alert" id="errorDiv">
               There was an error while sending yur message!
             </div>
-            <form action="https://formsubmit.co/essafarhaan@yahoo.com" method="post" role="form" class="php-email-form"
+            <form action="/" method="post" role="form" class="php-email-form"
               id="frmContact">
               <div class="row">
                 <div class="col form-group">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" id="name" required>
                 </div>
                 <div class="col form-group">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" placeholder="Subject" id="subject" required>
               </div>
               <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" id="message"
+                  required></textarea>
                 <div class="my-3">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
@@ -1015,9 +1016,53 @@
   <script type="text/javascript">
 
     $(document).ready(function () {
-      console.log("ready!");
+
       $("#errorDiv").addClass("d-none");
       $("#errorDiv").addClass("d-none");
+
+      var isFormValid = true;
+      
+      function checkFormValidity(form) {
+        isFormValid = true;
+        $(form).find(".check-validity").each(function () {
+          var fieldVal = $.trim($(this).val());
+          if (!fieldVal) {
+            isFormValid = false;
+          }
+        });
+      }
+
+      $("#frmContact").submit(function (e) {
+        checkFormValidity("#frmContact");
+        if (isFormValid) {
+          $.ajax({
+            method: 'POST',
+            url: 'https://formsubmit.co/ajax/essafarhaan@yahoo.com',
+            dataType: 'json',
+            async: false,
+            accepts: 'application/json',
+            data: {
+              name: $('#name').val(),
+              email: $('#email').val(),
+              subject: $('#subject').val(),
+              message: $('#message').val(),
+            },
+            success: function (data) {
+              $("#frmContact").css('display', 'none');
+              $("#successDiv").toggleClass("d-none");
+              var name = $('#name').val();
+              $("#dearname").text("Dear " + name)
+            },
+            error: function (data) {
+              alert("Error")
+              $("#errorDiv").toggleClass("d-none");
+            }
+          });
+        } else {
+          alert("Form is not valid :(");
+        }
+        return false;
+      });
     });
 
     let myCarousel = document.querySelectorAll('#featureContainer .carousel .carousel-item');
@@ -1034,34 +1079,6 @@
         next = next.nextElementSibling
       }
     })
-
-    $("#frmContact").submit(function (e) {
-      e.preventDefault(); //dont refresh the page
-
-      $.ajax({
-        method: 'POST',
-        url: 'https://formsubmit.co/ajax/essafarhaan@yahoo.com',
-        dataType: 'json',
-        async: false,
-        accepts: 'application/json',
-        data: {
-          name: "frmContact",
-          message: "I'm from International Petro."
-        },
-        success: function (data) { //success function
-          $("#frmContact").css('display', 'none'); //hide form
-          $("#successDiv").toggleClass("d-none");
-          var name = $('#name').val();
-          alert(name);
-          $("#dearname").text("Dear " + name)
-        },
-        error: function (data) { //error function
-          alert("Error")
-          $("#errorDiv").toggleClass("d-none");
-        }
-      });
-
-    });
   </script>
 </body>
 
