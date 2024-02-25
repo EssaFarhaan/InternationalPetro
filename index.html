@@ -346,7 +346,8 @@
         </div>
         <div class="row">
           <div class="col-lg-9" data-aos="fade-right" data-aos-delay="100">
-            <div id="carouselExample" class="carousel slide border border-solid border-1 border-primary" data-bs-ride="carousel">
+            <div id="carouselExample" class="carousel slide border border-solid border-1 border-primary"
+              data-bs-ride="carousel">
               <div class="carousel-landmark">
                 <!-- content section -->
                 <aside class="car-content">
@@ -434,7 +435,8 @@
         <div class="row">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
             <!-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> -->
-            <div id="carouselExampleCaptions" class="carousel slide border border-solid border-1 border-primary" data-bs-ride="carousel">
+            <div id="carouselExampleCaptions" class="carousel slide border border-solid border-1 border-primary"
+              data-bs-ride="carousel">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
@@ -715,7 +717,8 @@
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
             <!-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> -->
-            <div id="carouselExampleCaptions1" class="carousel slide border border-solid border-1 border-primary" data-bs-ride="carousel">
+            <div id="carouselExampleCaptions1" class="carousel slide border border-solid border-1 border-primary"
+              data-bs-ride="carousel">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
@@ -848,7 +851,6 @@
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
-
           <div class="col-lg-6 ">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.604960420071!2d-113.56949422340634!3d53.43977127231657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a01e36e58ec137%3A0xb1cabd749a08a132!2s6431%20Sandin%20Crescent%20NW%2C%20Edmonton%2C%20AB%20T6R%200E9%2C%20Canada!5e0!3m2!1sen!2sly!4v1708783412434!5m2!1sen!2sly"
@@ -856,30 +858,49 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="https://formsubmit.co/essafarhaan@yahoo.com" method="post" role="form" class="php-email-form">
+            <div class="alert alert-success d-none" role="alert" id="successDiv">
+              <h4 class="alert-heading">Well done!</h4>
+              <p id="dearname"></p>
+              <p>We are thrilled to hear from you. It is an honor to have you with us. </p>
+              <hr>
+              <p>
+                We are processing your request and will return your contact as soon as possible. Meanwhile, please go
+                through our web site to know more about our business. We also want to invite you to follow us on
+                social media. </p>
+              <p class="mb-0">Best regards, InternationalPetro.</p>
+            </div>
+            <div class="alert alert-danger d-none" role="alert" id="errorDiv">
+              There was an error while sending yur message!
+            </div>
+            <form action="https://formsubmit.co/essafarhaan@yahoo.com" method="post" role="form" class="php-email-form"
+              id="frmContact">
               <div class="row">
                 <div class="col form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" id="name" required>
                 </div>
                 <div class="col form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required>
               </div>
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <div class="my-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+                <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
+                <div class="form-group text-center">
+                  <input type="hidden" name="_captcha" value="false">
+                  <!-- <input type="hidden" name="_next" value="https://essafarhaan.github.io/InternationalPetro/thanks.html"> -->
+                  <input type="submit" value="Send Message" class="btn btn-primary rounded">
+                </div>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
-
         </div>
 
       </div>
@@ -992,6 +1013,13 @@
   <script src="assets/js/main.js"></script>
 
   <script type="text/javascript">
+
+    $(document).ready(function () {
+      console.log("ready!");
+      $("#errorDiv").addClass("d-none");
+      $("#errorDiv").addClass("d-none");
+    });
+
     let myCarousel = document.querySelectorAll('#featureContainer .carousel .carousel-item');
     myCarousel.forEach((el) => {
       const minPerSlide = 4
@@ -1006,6 +1034,34 @@
         next = next.nextElementSibling
       }
     })
+
+    $("#frmContact").submit(function (e) {
+      e.preventDefault(); //dont refresh the page
+
+      $.ajax({
+        method: 'POST',
+        url: 'https://formsubmit.co/ajax/essafarhaan@yahoo.com',
+        dataType: 'json',
+        async: false,
+        accepts: 'application/json',
+        data: {
+          name: "frmContact",
+          message: "I'm from International Petro."
+        },
+        success: function (data) { //success function
+          $("#frmContact").css('display', 'none'); //hide form
+          $("#successDiv").toggleClass("d-none");
+          var name = $('#name').val();
+          alert(name);
+          $("#dearname").text("Dear " + name)
+        },
+        error: function (data) { //error function
+          alert("Error")
+          $("#errorDiv").toggleClass("d-none");
+        }
+      });
+
+    });
   </script>
 </body>
 
