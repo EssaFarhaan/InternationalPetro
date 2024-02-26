@@ -1054,10 +1054,11 @@
               $("#dearname").text("Dear " + name)
               $("#successDiv").toggleClass("d-none");
               setTimeout(() => {
-                const successDiv = document.getElementById('successDiv');
-                successDiv.style.visibility = 'hidden';
-              }, 1000);
-              $("#frmContact").css('display', 'block');
+                //const successDiv = document.getElementById('successDiv');
+                //successDiv.style.visibility = 'hidden';
+                $("#successDiv").toggleClass("d-none");
+                $("#frmContact").css('display', 'block');
+              }, 2000);
             },
             error: function (data) {
               $("#errorDiv").toggleClass("d-none");
