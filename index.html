@@ -1048,7 +1048,8 @@
               setTimeout(() => {
                 $("#frmContact").css('display', 'block');
                 $("#successDiv").css('display', 'none');
-              }, 3000);
+              }, 4000);
+              document.getElementById("frmContact").reset();
               return false;
             },
             error: function (data) {
