@@ -42,7 +42,6 @@
     }
 
     .about .content ul i {
-      /* position: absolute; */
       left: 0;
       top: 2px;
       padding: 0;
@@ -54,6 +53,30 @@
 
     .about .content ul li:first-child {
       margin-top: 0px;
+    }
+
+    #explorationdiv .content ul i {
+      left: 0;
+      top: 0px;
+      padding: 0;
+      font-size: 20px;
+      color: #2487ce;
+      line-height: 1;
+      box-shadow: none;
+    }
+
+    #explorationdiv .content ul li:first-child {
+      margin-top: 0px;
+    }
+
+    #explorationdiv .content ul li {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    #explorationdiv .content span {
+      margin-left: 12px;
     }
 
     #crude .icon-box {
@@ -278,7 +301,8 @@
         <div class="section-title">
           <h2>About</h2>
           <h3>Find Out More <span>About Us</span></h3>
-          <p>Satisfying energy needs each day with integrity, precision, on-time delivery, and customer satisfaction.
+          <p class="w-75">Satisfying energy needs each day with integrity, precision, on-time delivery, and customer
+            satisfaction.
           </p>
         </div>
 
@@ -286,7 +310,7 @@
           <div class="col-lg-6">
             <h3>We value the meaning of business with professionality and respect</h3>
             <p class="fst-italic">International Petro targets a large section of the petroleum industry including</p>
-            <ul>
+            <ul class="list-unstyled">
               <li><i class="ri-check-double-line"></i> Supply of Crude Oil and Petroleum Products</li>
               <li><i class="ri-check-double-line"></i> Oil Wells, Pipelines and Pump Stations</li>
               <li><i class="ri-check-double-line"></i> Petrochemical Refining and Upgrading</li>
@@ -342,7 +366,7 @@
         <div class="section-title">
           <h2>Crude Oil & Petroleum Products</h2>
           <h3>We cater to <span>demands</span></h3>
-          <p>A global supply chain that includes domestic and international trading.</p>
+          <p class="w-75">A global supply chain that includes domestic and international trading.</p>
         </div>
         <div class="row">
           <div class="col-lg-9" data-aos="fade-right" data-aos-delay="100">
@@ -429,7 +453,7 @@
         <div class="section-title">
           <h2>Oil & Gas Equipment</h2>
           <h3>We Thrive <span>on Quality</span></h3>
-          <p>High Precision Oil and Gas Drilling Equipment, Handling Tools, and Safety Products.</p>
+          <p class="w-75">High Precision Oil and Gas Drilling Equipment, Handling Tools, and Safety Products.</p>
         </div>
 
         <div class="row">
@@ -591,7 +615,7 @@
         <div class="section-title">
           <h2>Oil Refining & Petrochemicals</h2>
           <h3>We Offer Sustanable <span>End Results</span></h3>
-          <p>Safety-Focused Engineering & Design Services for Chemical Processing.</p>
+          <p class="w-75">Safety-Focused Engineering & Design Services for Chemical Processing.</p>
         </div>
       </div>
       <div class="container1 my-1" id="featureContainer">
@@ -709,12 +733,14 @@
     <!-- ======= Exploration Section ======= -->
     <section id="exploration" class="services">
       <div class="container" data-aos="fade-up">
+
         <div class="section-title">
           <h2>Oil & Gas Exploration Studies</h2>
           <h3>We Never <span>Give Up</span></h3>
-          <p>The extensive research and discovery of potential drilling and extraction sites.</p>
+          <p class="w-75">The extensive research and discovery of potential drilling and extraction sites.</p>
         </div>
-        <div class="row">
+
+        <div class="row content" id="explorationdiv">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
             <!-- <img src="assets/img/about.jpg" class="img-fluid" alt=""> -->
             <div id="carouselExampleCaptions1" class="carousel slide border border-solid border-1 border-primary"
@@ -787,20 +813,20 @@
               maintaining
               strategic alliances with several international leading firms. This diversity allows us to
               flexibly handle every aspect of the petroleum industry as it develops.</p>
-            <p class="">
+            <p class="pt-2">
               Our mission is to utilize technology and our worldwide experience to optimize oil and gas exploration and
               production. We offer our clients high quality services and solutions in specific areas of oil and gas
               production optimization. We provide value added products and services in the fields of geophysics,
               geology, formation evaluation, and petroleum engineering to provide our clients a better understanding of
               their reservoir systems, to reduce uncertainty and risk and hence maximize hydrocarbon recovery. Our
               services include</p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Integrated Reservoir Studies.</li>
-              <li><i class="ri-check-double-line"></i> Structural Modeling and Stratigraphic Modeling.</li>
-              <li><i class="ri-check-double-line"></i> Petrophysical Modeling.</li>
-              <li><i class="ri-check-double-line"></i> Reservoir Engineering and Dynamic Modeling.</li>
-              <li><i class="ri-check-double-line"></i> Well Modeling and Diagnostics.</li>
-              <li><i class="ri-check-double-line"></i> Full field Reservoir Simulation.</li>
+            <ul class="list-unstyled">
+              <li><i class="ri-check-double-line"></i><span> Integrated Reservoir Studies.</span></li>
+              <li><i class="ri-check-double-line"></i><span> Structural Modeling and Stratigraphic Modeling.</span></li>
+              <li><i class="ri-check-double-line"></i><span> Petrophysical Modeling.</span></li>
+              <li><i class="ri-check-double-line"></i><span> Reservoir Engineering and Dynamic Modeling.</span></li>
+              <li><i class="ri-check-double-line"></i><span> Well Modeling and Diagnostics.</span></li>
+              <li><i class="ri-check-double-line"></i><span> Full field Reservoir Simulation.</span></li>
             </ul>
             <p>
               We analyze how artificial intelligence changes a significant part of the energy sector, the oil and gas
@@ -820,7 +846,8 @@
         <div class="section-title">
           <h2>Contact</h2>
           <h3><span>Contact Us</span></h3>
-          <p>Lets talk about your oil and gas projects. Send us a message and we will be in touch within one business
+          <p class="w-75">Lets talk about your oil and gas projects. Send us a message and we will be in touch within
+            one business
             day.</p>
         </div>
 
@@ -858,6 +885,12 @@
           </div>
 
           <div class="col-lg-6">
+            <div id="spinner-div" class="text-center">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+
             <div class="alert alert-success" style="display: none;" role="alert" id="successDiv">
               <h4 class="alert-heading">Well done!</h4>
               <p id="dearname"></p>
@@ -872,8 +905,9 @@
             <div class="alert alert-danger d-none" role="alert" id="errorDiv">
               There was an error while sending yur message!
             </div>
-            <form action="https://formsubmit.co/essafarhaan@yahoo.com" method="post" role="form" class="php-email-form"
-              id="frmContact">
+
+            <form name="contact-form" action="https://formsubmit.co/essafarhaan@yahoo.com" method="post" role="form"
+              class="php-email-form" id="frmContact">
               <div class="row">
                 <div class="col form-group">
                   <input type="text" name="name" class="form-control" placeholder="Your Name" id="name" required>
@@ -888,7 +922,7 @@
               <div class="form-group">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" id="message"
                   required></textarea>
-                <div class="form-group text-center mt-3">
+                <div class="form-group text-center mt-5">
                   <input type="hidden" name="_captcha" value="false">
                   <!-- <input type="hidden" name="_next" value="https://essafarhaan.github.com/InternationalPetro/thankyou.html"> -->
                   <input type="submit" value="Send Message" class="btn btn-primary rounded">
@@ -1012,6 +1046,7 @@
       $("#frmContact").css('display', 'block');
       $("#successDiv").css('display', 'none');
       $("#errorDiv").css('display', 'none');
+      $("#spinner-div").fadeOut();
 
       var isFormValid = true;
 
@@ -1028,6 +1063,7 @@
       $("#frmContact").submit(function (e) {
         checkFormValidity("#frmContact");
         if (isFormValid) {
+          $("#spinner-div").fadeIn();
           $.ajax({
             method: 'POST',
             url: 'https://formsubmit.co/ajax/essafarhaan@yahoo.com',
@@ -1041,28 +1077,25 @@
               message: $('#message').val(),
             },
             success: function (data) {
-              $("#frmContact").css('display', 'none');
+              $("#dearname").text("Dear " + $('#name').val())
+              $("#spinner-div").fadeOut();
               $("#successDiv").css('display', 'block');
-              var name = $('#name').val();
-              $("#dearname").text("Dear " + name)              
-              setTimeout(() => {
-                $("#frmContact").css('display', 'block');
-                $("#successDiv").css('display', 'none');
-              }, 4000);
-              document.getElementById("frmContact").reset();
-              return false;
+              $("#successDiv").delay(6000).fadeOut(1000);
+              var frm = document.getElementsByName('contact-form')[0];
+              frm.reset();
             },
             error: function (data) {
               $("#errorDiv").css('display', 'block');
-            }
+              alert(request.responseText);
+            },
           });
         } else {
-          alert("Form is not valid :(");
+          alert("Form is not valid");
         }
         return false;
       });
     });
-    
+
     let myCarousel = document.querySelectorAll('#featureContainer .carousel .carousel-item');
     myCarousel.forEach((el) => {
       const minPerSlide = 4
