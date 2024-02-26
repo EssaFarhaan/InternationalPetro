@@ -858,7 +858,7 @@
           </div>
 
           <div class="col-lg-6">
-            <div class="alert alert-success d-none" role="alert" id="successDiv">
+            <div class="alert alert-success" style="display: none;" role="alert" id="successDiv">
               <h4 class="alert-heading">Well done!</h4>
               <p id="dearname"></p>
               <p>We are thrilled to hear from you. It is an honor to have you with us. </p>
@@ -1017,9 +1017,8 @@
     $(document).ready(function () {
 
       $("#frmContact").css('display', 'block');
-
-      $("#errorDiv").addClass("d-none");
-      $("#errorDiv").addClass("d-none");
+      $("#successDiv").css('display', 'none');
+      $("#errorDiv").css('display', 'none');
 
       var isFormValid = true;
 
@@ -1050,15 +1049,13 @@
             },
             success: function (data) {
               $("#frmContact").css('display', 'none');
+              $("#successDiv").css('display', 'block');
               var name = $('#name').val();
-              $("#dearname").text("Dear " + name)
-              $("#successDiv").toggleClass("d-none");
+              $("#dearname").text("Dear " + name)              
               setTimeout(() => {
-                //const successDiv = document.getElementById('successDiv');
-                //successDiv.style.visibility = 'hidden';
-                $("#successDiv").toggleClass("d-none");
                 $("#frmContact").css('display', 'block');
-              }, 2000);
+                $("#successDiv").css('display', 'none');
+              }, 3000);
             },
             error: function (data) {
               $("#errorDiv").toggleClass("d-none");
