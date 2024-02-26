@@ -1016,11 +1016,13 @@
 
     $(document).ready(function () {
 
+      $("#frmContact").css('display', 'block');
+
       $("#errorDiv").addClass("d-none");
       $("#errorDiv").addClass("d-none");
 
       var isFormValid = true;
-      
+
       function checkFormValidity(form) {
         isFormValid = true;
         $(form).find(".check-validity").each(function () {
@@ -1048,9 +1050,14 @@
             },
             success: function (data) {
               $("#frmContact").css('display', 'none');
-              $("#successDiv").toggleClass("d-none");
               var name = $('#name').val();
               $("#dearname").text("Dear " + name)
+              $("#successDiv").toggleClass("d-none");
+              setTimeout(() => {
+                const successDiv = document.getElementById('successDiv');
+                successDiv.style.visibility = 'hidden';
+              }, 1000);
+              $("#frmContact").css('display', 'block');
             },
             error: function (data) {
               $("#errorDiv").toggleClass("d-none");
